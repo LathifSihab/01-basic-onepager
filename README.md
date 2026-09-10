@@ -34,21 +34,28 @@ css/site.css          everything else, one hand-written file
 js/nav.js             mobile disclosure menu + IntersectionObserver scrollspy
 js/season-bar.js      current-month marker, animates once on load
 js/form.js            inline validation, submit states, time-to-submit floor
-img/                  placeholders (see below)
+img/                  photography from Wikimedia Commons (see CREDITS.md)
 ```
 
 Every script is `defer`, and every one of them is an enhancement: with JS disabled the page
 reads in full, the nav anchors work, the season bar renders without its marker, and the form
 falls back to native browser validation and a normal POST.
 
-## Images are placeholders
+## Images
 
-`img/*.webp` and `og-share.jpg` are generated palette blocks at the correct dimensions and
-crop ratios, so the layout is honest about spacing. Replace them with free stock photography
-(Unsplash/Pexels) before this is shown to a client — §3 lists what is needed: a field of
-tulip rows (3:2), and 4:5 portraits of bulbs in a crate, narcissi, hyacinths, allium, and
-the grower. No filters, no duotone; keep the ratios, keep the `width`/`height` attributes in
-sync, and keep the Dutch `alt` text accurate to whatever photo lands.
+Real photography from Wikimedia Commons, centre-cropped to the spec ratios (3:2 landscape,
+4:5 portrait) and re-encoded as WebP. No filters, no duotone. The hero and the About photo
+are actual tulip fields in the Bollenstreek at Hillegom, which is where the fictional
+business is set.
+
+Attribution is **required** by the CC BY licences and lives in two places: a credit line in
+the footer, and [CREDITS.md](CREDITS.md) with the full table. Do not strip either without
+replacing the photos first.
+
+One substitution to know about: the spec asks for a portrait of the grower in the About
+section. No suitably licensed portrait of a Dutch bulb grower exists on Commons, and putting
+a real stranger's face on a fictional family would misrepresent that person, so `portret.webp`
+is a Hillegom field instead. A real person there needs a shoot or a paid stock licence.
 
 ## Deliberately absent
 

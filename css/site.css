@@ -575,6 +575,12 @@ main p a,
   font-size: var(--step--1);
 }
 
+.footer-credit {
+  margin-top: var(--sp-2);
+  color: var(--paper-deep);
+  opacity: .75;
+}
+
 .footer-bottom::before {
   content: "";
   display: block;
