@@ -23,6 +23,11 @@
 
   label.textContent = 'nu · ' + MONTHS[month];
 
+  // The label is centred on the marker, so near either end it would hang off the bar.
+  // Pin it inside at the edges instead of letting it clip.
+  if (fraction < 0.08) label.style.transform = 'translateX(0)';
+  else if (fraction > 0.88) label.style.transform = 'translateX(-100%)';
+
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (reduced) {

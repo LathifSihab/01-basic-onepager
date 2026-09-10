@@ -44,6 +44,9 @@ h1 {
   letter-spacing: -.02em;
 }
 
+/* Long Dutch compounds ("Bollenstreek") must never punch out of their column. */
+h1, h2, h3 { overflow-wrap: break-word; }
+
 h2 {
   font-size: var(--step-3);
   font-weight: 700;
@@ -111,6 +114,18 @@ main p a,
 
 .band-paper { background: var(--paper); }
 .band-deep  { background: var(--paper-deep); }
+
+/* Grid and flex children default to min-width:auto, so one wide child (a long word, a
+   12-segment bar) can force its track past the viewport. Opt every track out of that. */
+.hero-grid > *,
+.crop-grid > *,
+.step-grid > *,
+.over-grid > *,
+.contact-grid > *,
+.footer-grid > *,
+.header-inner > * {
+  min-width: 0;
+}
 
 .band > .container > h2 { margin-bottom: var(--sp-12); }
 
@@ -269,12 +284,16 @@ main p a,
 .season-bar {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  /* minmax(0, 1fr), not 1fr: the default min-width:auto floors each segment at its
+     min-content width, which pushes the whole hero column past a narrow viewport. */
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   border: var(--rule);
 }
 
 .season-month {
   position: relative;
+  min-width: 0;
+  overflow: hidden;
   height: 44px;
   display: flex;
   align-items: flex-end;
@@ -535,6 +554,7 @@ main p a,
 /* Honeypot: reachable to bots, invisible and unreachable to people. */
 .hp {
   position: absolute;
+  left: -9999px;
   width: 1px;
   height: 1px;
   overflow: hidden;
@@ -588,26 +608,29 @@ main p a,
   margin-bottom: var(--sp-4);
 }
 
-/* ---------- Breakpoints: 1240 / 1024 / 720 / 480 ---------- */
+/* ---------- Breakpoints: 1240 / 1024 / 900 / 720 / 480 ----------
+   900 is the structural one: below it the two-column blocks stack and the nav becomes a
+   disclosure. Between 720 and 900 there is not enough room for a wordmark, four links and
+   a CTA on one line, nor for a hero photo narrow enough to still read as a photo. */
 
 @media (max-width: 1024px) {
-  .hero-copy { grid-column: 1 / span 8; }
-  .hero-media { grid-column: 9 / -1; }
+  .hero-copy { grid-column: 1 / span 7; }
+  .hero-media { grid-column: 8 / -1; }
   .crop-grid { grid-template-columns: repeat(2, 1fr); }
   .over-copy { grid-column: 6 / -1; }
   .over-note { grid-column: 6 / -1; }
 }
 
-@media (max-width: 720px) {
-  .container { padding-inline: var(--sp-4); }
-
-  .band { padding-block: var(--sp-16); }
-
+@media (max-width: 900px) {
   .site-header { height: auto; }
 
+  /* height:auto, not 72px: the disclosure panel wraps onto a second flex line, and a fixed
+     height would leave it painting outside the header's background. */
   .header-inner {
-    height: 72px;
+    height: auto;
+    min-height: 72px;
     flex-wrap: wrap;
+    align-content: center;
   }
 
   .menu-toggle { display: block; }
@@ -618,8 +641,10 @@ main p a,
     flex-direction: column;
     align-items: stretch;
     gap: var(--sp-4);
+    margin-top: var(--sp-4);
     padding-block: var(--sp-4) var(--sp-6);
     border-top: var(--rule);
+    background: var(--paper);
   }
 
   /* Full-width panel, not an overlay. */
@@ -642,11 +667,41 @@ main p a,
   .hero-copy, .hero-media { grid-column: 1 / -1; }
 
   .hero-media {
-    margin-right: calc(var(--sp-4) * -1);
+    margin-right: calc(var(--sp-6) * -1);
     margin-top: var(--sp-12);
   }
 
+  .hero-media img { aspect-ratio: 2 / 1; }
+
   .season { margin-top: var(--sp-12); }
+
+  .over-grid,
+  .contact-grid { grid-template-columns: 1fr; }
+
+  .over-media,
+  .over-copy,
+  .over-note,
+  .contact-details,
+  .contact-form-wrap { grid-column: 1 / -1; }
+
+  .over-media img { max-width: 340px; }
+
+  /* Marginal notes drop below their block once the columns collapse. */
+  .over-note { margin-top: var(--sp-2); }
+
+  .contact-form-wrap { margin-top: var(--sp-12); }
+
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 720px) {
+  .container { padding-inline: var(--sp-4); }
+
+  .band { padding-block: var(--sp-16); }
+
+  .hero-media { margin-right: calc(var(--sp-4) * -1); }
+
+  .hero-media img { aspect-ratio: 3 / 2; }
 
   .season-month {
     height: 60px;
@@ -658,22 +713,6 @@ main p a,
 
   .step-grid { grid-template-columns: 1fr; }
 
-  .over-grid,
-  .contact-grid { grid-template-columns: 1fr; }
-
-  .over-media,
-  .over-copy,
-  .over-note,
-  .contact-details,
-  .contact-form-wrap { grid-column: 1 / -1; }
-
-  .over-media img { max-width: 320px; }
-
-  /* Marginal notes drop below their block on mobile. */
-  .over-note { margin-top: var(--sp-2); }
-
-  .contact-form-wrap { margin-top: var(--sp-12); }
-
   .footer-grid { grid-template-columns: 1fr; }
 }
 
@@ -681,6 +720,19 @@ main p a,
   .crop-grid { grid-template-columns: 1fr; }
   .crop img { max-width: 320px; }
   .hero-actions .btn { width: 100%; text-align: center; }
+
+  /* --step-5's clamp floor is 3.5rem, which never scales below 56px — too large for a
+     288px column. Overridden here rather than in tokens.css, which stays byte-identical
+     across all three prototypes. */
+  h1 { font-size: clamp(2.25rem, 11vw, 3.5rem); }
+  h2 { font-size: clamp(1.75rem, 7.5vw, var(--step-3)); }
+  h3 { font-size: var(--step-1); }
+
+  .lede { font-size: var(--step-0); }
+
+  /* 12 vertical labels in ~24px each: keep them, but lose the padding that crowds them. */
+  .season-month { font-size: .8125rem; }
+  .season-legend { flex-wrap: wrap; }
 }
 
 /* ---------- Reduced motion ---------- */
