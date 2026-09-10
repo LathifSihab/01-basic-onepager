@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grondwerk Bloembollen — bollenkwekerij in Hillegom sinds 1958</title>
+<meta name="description" content="Grondwerk Bloembollen teelt tulpen, narcissen, hyacinten en sierui op veertien hectare in Hillegom. Voor de tuin thuis en voor het plantsoen van de gemeente.">
+<link rel="canonical" href="https://grondwerkbloembollen.nl/">
+<meta name="theme-color" content="#F3F2EC">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:site_name" content="Grondwerk Bloembollen">
+<meta property="og:title" content="Grondwerk Bloembollen — bollen uit de Bollenstreek, sinds 1958">
+<meta property="og:description" content="Tulpen, narcissen, hyacinten en sierui van eigen veld in Hillegom. Levering in het najaar, voor tuin en plantsoen.">
+<meta property="og:url" content="https://grondwerkbloembollen.nl/">
+<meta property="og:image" content="https://grondwerkbloembollen.nl/img/og-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Grondwerk Bloembollen — bollen uit de Bollenstreek, sinds 1958">
+<meta name="twitter:description" content="Tulpen, narcissen, hyacinten en sierui van eigen veld in Hillegom.">
+<meta name="twitter:image" content="https://grondwerkbloembollen.nl/img/og-share.jpg">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="site.webmanifest">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap">
+
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Naar de inhoud</a>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a class="wordmark" href="#top">Grondwerk</a>
+
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Hoofdmenu">
+      <ul class="nav-list">
+        <li><a href="#kwekerij">Kwekerij</a></li>
+        <li><a href="#werkwijze">Werkwijze</a></li>
+        <li><a href="#over">Over ons</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn-primary nav-cta" href="#contact">Vraag een offerte aan</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ Hero ============ -->
+  <section class="hero band band-paper" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1 id="hero-title">Bollen uit de Bollenstreek, sinds 1958</h1>
+        <p class="lede">Wij telen tulpen, narcissen, hyacinten en sierui op veertien hectare in
+          Hillegom. Voor de tuin thuis en voor het plantsoen van de gemeente.</p>
+        <p class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Vraag een offerte aan</a>
+          <a class="btn btn-secondary" href="#kwekerij">Bekijk het assortiment</a>
+        </p>
+
+        <!-- Season bar is rendered complete in HTML. JS only positions and reveals the marker,
+             so the bar stays readable with JS disabled. -->
+        <figure class="season">
+          <figcaption class="season-title">Wanneer wij planten en leveren</figcaption>
+          <div class="season-bar" id="season-bar">
+            <span class="season-marker" id="season-marker" hidden>
+              <span class="season-marker-label" id="season-marker-label"></span>
+            </span>
+            <span class="season-month is-plant"><span>jan</span></span>
+            <span class="season-month is-plant"><span>feb</span></span>
+            <span class="season-month"><span>mrt</span></span>
+            <span class="season-month"><span>apr</span></span>
+            <span class="season-month"><span>mei</span></span>
+            <span class="season-month"><span>jun</span></span>
+            <span class="season-month"><span>jul</span></span>
+            <span class="season-month"><span>aug</span></span>
+            <span class="season-month is-ship"><span>sep</span></span>
+            <span class="season-month is-ship"><span>okt</span></span>
+            <span class="season-month is-ship"><span>nov</span></span>
+            <span class="season-month is-plant"><span>dec</span></span>
+          </div>
+          <p class="season-legend">
+            <span class="key key-ship" aria-hidden="true"></span> Levering
+            <span class="key key-plant" aria-hidden="true"></span> Plantbaar
+          </p>
+        </figure>
+      </div>
+
+      <div class="hero-media">
+        <img src="img/hero-veld.webp" width="1200" height="800"
+             alt="Rijen bloeiende tulpen op het veld in Hillegom, vroeg in de ochtend.">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Kwekerij ============ -->
+  <section class="band band-deep" id="kwekerij" aria-labelledby="kwekerij-title">
+    <div class="container">
+      <h2 id="kwekerij-title">Wat er op het veld staat</h2>
+      <ul class="crop-grid">
+        <li class="crop">
+          <img src="img/tulpen.webp" width="800" height="1000" loading="lazy"
+               alt="Tulpenbollen in een houten kist op een werkbank.">
+          <h3>Tulpen</h3>
+          <p class="latin">Tulipa</p>
+          <p>Enkelbloemig, dubbelbloemig en botanisch. Ruim veertig cultivars, waarvan we er
+            twaalf zelf hebben geselecteerd.</p>
+        </li>
+        <li class="crop">
+          <img src="img/narcissen.webp" width="800" height="1000" loading="lazy"
+               alt="Narcissen in bloei langs de rand van een perceel.">
+          <h3>Narcissen</h3>
+          <p class="latin">Narcissus</p>
+          <p>Verwilderingsbollen die jaar op jaar terugkomen. Sterk op zware klei en in de berm.</p>
+        </li>
+        <li class="crop">
+          <img src="img/hyacinten.webp" width="800" height="1000" loading="lazy"
+               alt="Hyacinten in bloei, dicht bij elkaar geplant.">
+          <h3>Hyacinten</h3>
+          <p class="latin">Hyacinthus</p>
+          <p>Op geur geselecteerd. Vooral gevraagd voor perken bij entrees en zorgcentra.</p>
+        </li>
+        <li class="crop">
+          <img src="img/sierui.webp" width="800" height="1000" loading="lazy"
+               alt="Sierui met bolvormige bloemen boven vaste planten.">
+          <h3>Sierui</h3>
+          <p class="latin">Allium</p>
+          <p>Late bloei, lange steel. Doet het goed tussen vaste planten.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Werkwijze ============ -->
+  <section class="band band-paper" id="werkwijze" aria-labelledby="werkwijze-title">
+    <div class="container">
+      <h2 id="werkwijze-title">Zo verloopt een bestelling</h2>
+      <ol class="step-grid">
+        <li class="step">
+          <p class="step-num">01</p>
+          <h3>Vertel wat u zoekt</h3>
+          <p>Soort, kleur, aantal en waar ze komen te staan. Twijfelt u? Stuur een foto van de
+            plek mee.</p>
+        </li>
+        <li class="step">
+          <p class="step-num">02</p>
+          <h3>U krijgt een voorstel</h3>
+          <p>Binnen twee werkdagen een offerte met cultivars, maatsortering en prijs per honderd
+            stuks.</p>
+        </li>
+        <li class="step">
+          <p class="step-num">03</p>
+          <h3>Levering in het najaar</h3>
+          <p>Wij leveren tussen half september en eind november, op het moment dat plantbaar is.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ Over ============ -->
+  <section class="band band-deep" id="over" aria-labelledby="over-title">
+    <div class="container over-grid">
+      <div class="over-media">
+        <img src="img/portret.webp" width="800" height="1000" loading="lazy"
+             alt="Kweker Joost van Grondwerk in de schuur, met een kist bollen onder de arm.">
+      </div>
+      <div class="over-copy">
+        <h2 id="over-title">Vier generaties op hetzelfde perceel</h2>
+        <p>Mijn overgrootvader nam het land aan de Vosselaan over in 1958: veertien hectare
+          zandgrond achter de duinen. Sindsdien is er geen meter bij gekomen en geen meter
+          af gegaan.</p>
+        <p>Tot in de jaren tachtig trokken we vooral bloemen op de broeierij. Toen die markt
+          smaller werd zijn we teruggegaan naar waar we goed in zijn: bollen telen, rooien,
+          sorteren en zelf leveren.</p>
+        <p>Wat we nu anders doen is kleinere partijen, meer cultivars en geen vaste catalogus.
+          U vertelt wat er moet komen te staan, wij zoeken erbij wat dit jaar goed is.</p>
+      </div>
+      <p class="over-note">Hillegom, Zuid-Holland · 14 ha · sinds 1958</p>
+    </div>
+  </section>
+
+  <!-- ============ Contact ============ -->
+  <section class="band band-paper" id="contact" aria-labelledby="contact-title">
+    <div class="container contact-grid">
+      <div class="contact-details">
+        <h2 id="contact-title">Neem contact op</h2>
+        <p>Vertel kort wat u zoekt, dan sturen we binnen twee werkdagen een voorstel.
+          Langskomen op het erf kan ook, graag even bellen.</p>
+        <dl class="detail-list">
+          <dt>Adres</dt>
+          <dd>Vosselaan 12<br>2181 KM Hillegom</dd>
+          <dt>Telefoon</dt>
+          <dd><a href="tel:+31252123456">0252 &ndash; 12 34 56</a></dd>
+          <dt>E-mail</dt>
+          <dd><a href="mailto:info@grondwerkbloembollen.nl">info@grondwerkbloembollen.nl</a></dd>
+          <dt>KvK</dt>
+          <dd class="num">28104477</dd>
+          <dt>Erf geopend</dt>
+          <dd><span class="num">ma&ndash;vr 08:00&ndash;17:00</span><br>
+              <span class="num">za 09:00&ndash;12:30</span></dd>
+        </dl>
+      </div>
+
+      <div class="contact-form-wrap">
+        <!-- Netlify Forms handles delivery: no backend code in this tier. To host elsewhere,
+             swap in a Formspree action; the rest of the markup is unchanged. -->
+        <p class="form-error" id="form-error" role="alert" hidden></p>
+
+        <form class="form" id="contact-form" name="contact" method="POST"
+              data-netlify="true" data-netlify-honeypot="bedrijfsnaam" novalidate>
+          <input type="hidden" name="form-name" value="contact">
+
+          <p class="hp" aria-hidden="true">
+            <label>Bedrijfsnaam
+              <input type="text" name="bedrijfsnaam" tabindex="-1" autocomplete="off">
+            </label>
+          </p>
+
+          <div class="field">
+            <label for="naam">Naam</label>
+            <input type="text" id="naam" name="naam" autocomplete="name" required
+                   aria-describedby="naam-error">
+            <p class="field-error" id="naam-error"
+               data-error="Vul uw naam in, dan weten we wie we terugmailen."></p>
+          </div>
+
+          <div class="field">
+            <label for="email">E-mailadres</label>
+            <input type="email" id="email" name="email" autocomplete="email" required
+                   aria-describedby="email-error">
+            <p class="field-error" id="email-error"
+               data-error="Vul een e-mailadres in waar we u kunnen bereiken."></p>
+          </div>
+
+          <div class="field">
+            <label for="telefoon">Telefoonnummer <span class="optional">(niet verplicht)</span></label>
+            <input type="tel" id="telefoon" name="telefoon" autocomplete="tel"
+                   aria-describedby="telefoon-error">
+            <p class="field-error" id="telefoon-error"
+               data-error="Controleer het telefoonnummer, we konden het niet lezen."></p>
+          </div>
+
+          <div class="field">
+            <label for="rol">Ik ben</label>
+            <select id="rol" name="rol" required aria-describedby="rol-error">
+              <option value="">Maak een keuze</option>
+              <option>Particulier</option>
+              <option>Hovenier of aannemer</option>
+              <option>Gemeente of instelling</option>
+            </select>
+            <p class="field-error" id="rol-error"
+               data-error="Kies wat het beste bij u past, dan stemmen we het voorstel af."></p>
+          </div>
+
+          <div class="field">
+            <label for="bericht">Waar kunnen we mee helpen?</label>
+            <textarea id="bericht" name="bericht" rows="6" required
+                      aria-describedby="bericht-error"></textarea>
+            <p class="field-error" id="bericht-error"
+               data-error="Schrijf kort wat u zoekt: soort, aantal en waar ze komen te staan."></p>
+          </div>
+
+          <div class="field field-check">
+            <label class="check">
+              <input type="checkbox" id="consent" name="consent" required
+                     aria-describedby="consent-error">
+              <span>Ik ga akkoord met het opslaan van mijn gegevens om deze aanvraag te
+                beantwoorden.</span>
+            </label>
+            <p class="field-error" id="consent-error"
+               data-error="We hebben uw akkoord nodig om de aanvraag te mogen bewaren."></p>
+          </div>
+
+          <button class="btn btn-primary" type="submit" id="submit-btn">Verstuur aanvraag</button>
+        </form>
+
+        <div class="form-success" id="form-success" hidden>
+          <h3 id="form-success-title" tabindex="-1">Bedankt, uw bericht is verstuurd</h3>
+          <p>U hoort binnen twee werkdagen van ons, op het e-mailadres dat u heeft opgegeven.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="wordmark wordmark-footer">Grondwerk</p>
+      <p class="footer-desc">Bloembollen van eigen veld in Hillegom. Tulpen, narcissen,
+        hyacinten en sierui, voor tuin en plantsoen.</p>
+    </div>
+    <div>
+      <p>Vosselaan 12<br>2181 KM Hillegom</p>
+      <p><a href="tel:+31252123456">0252 &ndash; 12 34 56</a><br>
+         <a href="mailto:info@grondwerkbloembollen.nl">info@grondwerkbloembollen.nl</a></p>
+    </div>
+    <div>
+      <ul class="footer-links">
+        <li><a href="#kwekerij">Kwekerij</a></li>
+        <li><a href="#werkwijze">Werkwijze</a></li>
+        <li><a href="#over">Over ons</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <!-- Unwired in this tier: Prototype 1 ships one page only. These become real
+             documents in Prototype 2. -->
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Algemene voorwaarden</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; <span class="num">2026</span> Grondwerk Bloembollen &middot; KvK
+      <span class="num">28104477</span></p>
+  </div>
+</footer>
+
+<script src="js/nav.js" defer></script>
+<script src="js/season-bar.js" defer></script>
+<script src="js/form.js" defer></script>
+</body>
+</html>

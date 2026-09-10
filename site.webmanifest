@@ -1,0 +1,12 @@
+{
+  "name": "Grondwerk Bloembollen",
+  "short_name": "Grondwerk",
+  "lang": "nl",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#F3F2EC",
+  "theme_color": "#F3F2EC",
+  "icons": [
+    { "src": "/img/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

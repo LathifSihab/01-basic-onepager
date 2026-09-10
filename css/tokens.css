@@ -1,0 +1,47 @@
+/* tokens.css — shared design system artefact.
+   Byte-identical across prototypes 1, 2 and 3. If a token changes, it changes in all three. */
+
+:root {
+  /* Paper */
+  --paper:         #F3F2EC;  /* cool bone, page background */
+  --paper-deep:    #E4E4DA;  /* grey-green wash, alternating bands */
+  --paper-white:   #FFFFFF;  /* form fields, tables */
+
+  /* Ink */
+  --ink:           #10344B;  /* Delft blue — body text, rules, primary brand */
+  --ink-mid:       #3A6280;  /* secondary text, captions */
+  --ink-soft:      #6C8598;  /* disabled, placeholder */
+
+  /* Accents */
+  --hyacinth:      #C0416E;  /* CTAs, links, the one loud colour */
+  --hyacinth-deep: #9B2F56;  /* small text on paper; hover state */
+  --stem:          #6E8B4B;  /* status fills only — never text */
+  --stem-deep:     #4E6733;  /* status text */
+
+  /* Type */
+  --font-display: "Bricolage Grotesque", "Arial Narrow", sans-serif;
+  --font-body:    "Source Serif 4", Georgia, serif;
+
+  --step--1: 0.875rem;    /* captions, form help */
+  --step-0:  1.0625rem;   /* body */
+  --step-1:  1.3125rem;   /* lede, large body */
+  --step-2:  1.75rem;     /* h3 */
+  --step-3:  2.5rem;      /* h2 */
+  --step-4:  3.5rem;      /* h1 on interior pages */
+  --step-5:  clamp(3.5rem, 8vw, 6rem); /* hero */
+
+  /* Space — 4px base */
+  --sp-1: .25rem;  --sp-2: .5rem;   --sp-3: .75rem;  --sp-4: 1rem;
+  --sp-6: 1.5rem;  --sp-8: 2rem;    --sp-12: 3rem;   --sp-16: 4rem;
+  --sp-24: 6rem;   --sp-32: 8rem;
+
+  /* Structure */
+  --container:   1180px;
+  --measure:     68ch;
+  --rule:        1px solid var(--ink);
+  --rule-soft:   1px solid rgba(16, 52, 75, .18);
+  --radius-input: 3px;
+
+  --dur:  180ms;
+  --ease: cubic-bezier(.2, .7, .3, 1);
+}

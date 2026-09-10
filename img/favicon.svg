@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Grondwerk">
+  <rect width="32" height="32" fill="#10344B"/>
+  <path d="M16 6c3.2 0 5.6 2.6 5.6 6 0 4.6-3.4 8.6-5.6 10.6C13.8 20.6 10.4 16.6 10.4 12c0-3.4 2.4-6 5.6-6z" fill="#C0416E"/>
+  <rect x="15" y="21" width="2" height="6" fill="#6E8B4B"/>
+</svg>
